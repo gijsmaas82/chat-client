@@ -36,7 +36,10 @@ class App extends React.Component {
     request
       .post('http://localhost:4000/message')
       .send( { text })
-      .then(console.log)
+      .then(response => {
+        console.log(response)
+        this.setState({ text: ''})
+      })
       .catch(console.error)
   }
 
